@@ -109,7 +109,7 @@ const consumer = new Consumer({
 
 producer
 
-```
+```js
 const producer = new Producer({
   namesrvAddr: 'localhost:9876', // for rocket mq
   accessKey: 'your-accesskey',   // for aliyun-ons
