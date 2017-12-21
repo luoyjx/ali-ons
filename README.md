@@ -54,6 +54,7 @@ producer
 ```js
 'use strict';
 
+const co = require('co');
 const httpclient = require('urllib');
 const Producer = require('ali-ons').Producer;
 const Message = require('ali-ons').Message;
@@ -72,7 +73,19 @@ producer.ready(() => {
     'Hello ONS !!! ' // body
   );
 
-  producer.send(msg, (err, sendResult) => console.log(err, sendResult));
+  // Might be an order id or other key you want
+  const shardingKey = 'your sharding key goes here'
+
+  co(function *() {
+    // Send normal message, message will delivery averagely into topic queues
+    let sendResult = yield * producer.send(msg);
+
+    // Send sharding message
+    // Messages will delivery by sharding key, that means the messages with
+    // same sharding key will always be deliveried into same queue, but you
+    // should handle the situation when consumers scaling yourself.  
+    sendResult = yield * producer.send(msg, shardingKey);
+  });
 });
 ```
 
