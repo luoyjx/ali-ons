@@ -89,6 +89,35 @@ producer.ready(() => {
 });
 ```
 
+Rocketmq
+
+implemention from [yeliex/rocketmq](https://github.com/yeliex/rocketmq)
+
+consumer 
+
+```js
+const consumer = new Consumer({
+  namesrvAddr: 'localhost:9876', // for rocket mq
+  accessKey: 'your-accesskey',  // for aliyun-ons
+  secretKey: 'your-secretkey',  // for aliyun-ons
+  onsAddr: '',                   // for aliyun-ons
+  consumerGroup: 'your-consumer-group',  // for aliyun-ons
+  
+  isBroadcast: false, // default is false, that mean messages will be pushed to consumer cluster only once.
+});
+```
+
+producer
+
+```
+const producer = new Producer({
+  namesrvAddr: 'localhost:9876', // for rocket mq
+  accessKey: 'your-accesskey',   // for aliyun-ons
+  secretKey: 'your-secretkey',    // for aliyun-ons
+  producerGroup: 'your-producer-group',  // for aliyun-ons
+});
+```
+
 ## License
 
 [MIT](LICENSE)
