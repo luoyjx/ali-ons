@@ -1,5 +1,5 @@
 {
-  "name": "shimo-ali-ons",
+  "name": "shimo-rocketmq",
   "version": "2.2.1",
   "description": "Aliyun Open Notification Service Client",
   "main": "./lib/index.js",
