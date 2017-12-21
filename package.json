@@ -1,6 +1,6 @@
 {
   "name": "shimo-ali-ons",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Aliyun Open Notification Service Client",
   "main": "./lib/index.js",
   "files": [
