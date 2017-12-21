@@ -1,4 +1,4 @@
-ali-ons
+shimo-rocketmq
 =======
 
 [![NPM version][npm-image]][npm-url]
@@ -22,7 +22,7 @@ Sub module of [ali-sdk](https://github.com/ali-sdk/ali-sdk).
 ## Install
 
 ```bash
-npm install ali-ons --save
+npm install shimo-rocketmq --save
 ```
 
 ## Usage
@@ -81,9 +81,9 @@ producer.ready(() => {
     let sendResult = yield * producer.send(msg);
 
     // Send sharding message
-    // Messages will delivery by sharding key, that means the messages with
-    // same sharding key will always be deliveried into same queue, but you
-    // should handle the situation when consumers scaling yourself.  
+    // Messages will be delivered into queues which depends on sharding key,
+    // that means the messages with same sharding key will always be deliveried
+    // into same queue, but you should handle the situation when consumers scaling yourself. 
     sendResult = yield * producer.send(msg, shardingKey);
   });
 });
