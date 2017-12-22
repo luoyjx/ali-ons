@@ -1,6 +1,6 @@
 {
   "name": "shimo-rocketmq",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "description": "Aliyun Open Notification Service Client",
   "main": "./lib/index.js",
   "files": [
